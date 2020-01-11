@@ -1,7 +1,7 @@
 <?php
 App::uses('Model', 'Model');
 class AppModel extends Model {
-/*
+
     public function __construct($id = false, $table = null, $ds = null) {
         $this->_beforeInit();
         parent::__construct($id, $table, $ds);
@@ -9,13 +9,11 @@ class AppModel extends Model {
     }
 
     protected function _beforeInit() {
-        $this->useDbConfig = $this->getLang();
     }
 
     protected function _afterInit() {
-        // after construct actions here
     }
-
+/*
     public function getLang() {
         return Configure::read('Config.language');
     }
