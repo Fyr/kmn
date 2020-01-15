@@ -1,27 +1,15 @@
-<div class="container article">
-    <h1><?=__('Events')?></h1>
+<div class="col-md-12">
+    <div class="row">
 <?
-    $aArticleGroups = array_chunk($aArticles, 3);
-    foreach($aArticleGroups as $aArticles) {
-?>
-    <div class="row mainPageEvents" style="margin-bottom: 40px">
-<?
-        foreach ($aArticles as $article) {
-            $this->ArticleVars->init($article, $url, $title, $teaser, $src, '800x');
-?>
-            <div class="col-sm-4">
-                <div class="outer">
-                    <a href="<?=$url?>" class="picture" title="<?=$title?>" style="background-image: url('<?=$src?>')"></a>
-                    <div class="date"><?=date('d.m.Y', strtotime($article['News']['modified']))?></div>
-                </div>
-                <a href="<?=$url?>" class="description"><?=$title?></a>
-            </div>
-<?
+    $odd = true;
+    foreach($aArticles as $article) {
+        $odd = !$odd;
+        if ($odd) {
+            echo $this->element('../News/_left_article', compact('article'));
+        } else {
+            echo $this->element('../News/_right_article', compact('article'));
         }
+    }
 ?>
     </div>
-<?
-    }
-    echo $this->element('paginate');
-?>
 </div>

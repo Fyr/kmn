@@ -14,12 +14,12 @@
 					<span><?=__('Welcome, %s!', '<b>Admin</b>')?></span>
 				</li>
 				<li class="dropdown">
-					<a class="dropdown-toggle" href="<?=$this->Html->url(array('controller' => 'Admin', 'action' => 'index'))?>" title="<?=__('Homepage')?>">
+					<a class="dropdown-toggle" href="<?=$this->Html->url(array('controller' => 'Admin', 'action' => 'index'))?>" title="<?=__('Admin Homepage')?>">
 						<i class="icon-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;
 					</a>
 				</li>
 				<li class="dropdown">
-					<a class="dropdown-toggle" href="<?=$this->Html->url(array('controller' => 'pages', 'action' => 'home'))?>" title="<?=__('Homepage')?>" target="_blank">
+					<a class="dropdown-toggle" href="<?=$this->Html->url(array('controller' => 'pages', 'action' => 'home'))?>" title="<?=__('Website Homepage')?>" target="_blank">
 						<i class="icon-globe"></i>&nbsp;&nbsp;&nbsp;&nbsp;
 					</a>
 				</li>

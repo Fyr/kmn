@@ -57,39 +57,39 @@
 
 
 <nav>
-	<div class="logo">
+	<!--div class="logo">
 		<img src="/img/logo.png" alt="">
 	</div>
 	<div class="mini-logo">
 		<img src="/img/mini_logo.png" alt="">
-	</div>
-	<ul>
-		<li><a href="#1" class="active"><i class="fa fa-home"></i> <em>Главная</em></a></li>
+	</div-->
+	<ul style="margin-top: 100px">
+<?
+	$class = "active";
+	foreach($aNavBar as $curr => $item) {
+
+?>
+		<li><a class="<?=$class?>" href="<?=$this->Html->url($item['url'])?>"><i class="fa <?=$item['icon']?>"></i> <em><?=$item['title']?></em></a></li>
+<?
+		$class = "";
+	}
+?>
+		<!--li><a href="#1" class="active"><i class="fa fa-home"></i> <em>Главная</em></a></li>
 		<li><a href="#7"><i class="fa fa-calendar-check-o"></i> <em>Новости</em></a></li>
 		<li><a href="#3"><i class="fa fa-pencil"></i> <em>Статьи</em></a></li>
 		<li><a href="#6"><i class="fa fa-briefcase"></i> <em>Услуги</em></a></li>
 		<li><a href="#4"><i class="fa fa-image"></i> <em>Галерея</em></a></li>
 		<li><a href="#2"><i class="fa fa-user"></i> <em>Обо мне</em></a></li>
-		<li><a href="#5"><i class="fa fa-envelope"></i> <em>Контакты</em></a></li>
+		<li><a href="#5"><i class="fa fa-envelope"></i> <em>Контакты</em></a></li-->
+
 	</ul>
 </nav>
 
 <div class="slides">
 	<div class="slide" id="1"> <? /* style="background-image: url('/img/first_bg.jpg');" */?>
-		<div class="content first-content">
+		<div class="content">
 			<div class="container-fluid">
-				<div class="col-md-3">
-					<div class="author-image"><img src="/img/author_image.png" alt="Author Image"></div>
-				</div>
-				<div class="col-md-9">
-					<h2>Добро пожаловать!</h2>
-					<p>Please take a look at <strong><a rel="nofollow" href="https://www.toocss.com">Too CSS</a></strong> to see free template collections for you. Lorem ipsum <em>dolor sit amet</em>, consectetur adipiscing elit. <em>Sed vehicula blandit augue,</em> eu maximus odio tempus vitae.</p>
-					<p>Please tell your friends about templatemo website. A variety of free CSS templates are available for immediate downloads.</p>
-					<p>Phasellus vitae faucibus orci. Etiam eleifend orci sed faucibus semper. Cras varius dolor et augue fringilla, eu commodo sapien iaculis. Donec eget dictum tellus. <a href="#">Curabitur</a> a interdum diam. Nulla vestibulum porttitor porta.</p>
-					<p>Nulla vitae interdum libero, vel posuere ipsum. Phasellus interdum est et dapibus tempus. Vestibulum malesuada lorem condimentum mauris ornare dapibus. Curabitur tempor ligula et <a href="#">placerat</a> molestie.</p>
-					<div class="main-btn"><a href="#2">Read More</a></div>
-					<div class="fb-btn"><a rel="nofollow" href="https://fb.com/templatemo">Our FB Page</a></div>
-				</div>
+				<?=$this->fetch('content')?>
 			</div>
 		</div>
 	</div>
@@ -103,41 +103,5 @@
 
 <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script-->
-<script type="text/javascript">
-	$(document).ready(function() {
-		// navigation click actions
-		$('.scroll-link').on('click', function(event){
-			event.preventDefault();
-			var sectionID = $(this).attr("data-id");
-			scrollToID('#' + sectionID, 750);
-		});
-		// scroll to top action
-		$('.scroll-top').on('click', function(event) {
-			event.preventDefault();
-			$('html, body').animate({scrollTop:0}, 'slow');
-		});
-		// mobile nav toggle
-		$('#nav-toggle').on('click', function (event) {
-			event.preventDefault();
-			$('#main-nav').toggleClass("open");
-		});
-	});
-	// scroll function
-	function scrollToID(id, speed){
-		var offSet = 0;
-		var targetOffset = $(id).offset().top - offSet;
-		var mainNav = $('#main-nav');
-		$('html,body').animate({scrollTop:targetOffset}, speed);
-		if (mainNav.hasClass("open")) {
-			mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-			mainNav.removeClass("open");
-		}
-	}
-	if (typeof console === "undefined") {
-		console = {
-			log: function() { }
-		};
-	}
-</script>
 </body>
 </html>

@@ -451,95 +451,23 @@ msgstr "Не могу сохранить предмет с номером `%s` (
 msgid "Video not found for item `%s`"
 msgstr "Не найдено видео для предмета с номером `%s`"
 
-msgid "About the Museum"
-msgstr "О музее"
-
-msgid "History of police"
-msgstr "История милиции"
-
-msgid "History of militia"
-msgstr "История милиции"
-
-msgid "Visitors"
-msgstr "Посетителям"
-
-msgid "MUSEUM<span>of the Ministry of Internal Affairs</span><span>of the Republic of Belarus</span>"
-msgstr "МУЗЕЙ МВД <span>Республики Беларусь</span>"
-
-msgid "Ministry of Internal Affairs of the Republic of Belarus"
-msgstr "Министерство внутренних дел Республики Беларусь"
-
-msgid "search on site"
-msgstr "поиск по сайту"
-
-msgid "Interesting exhibits"
-msgstr "Интересные экспонаты"
-
-msgid "Choose category"
-msgstr "Выберите категорию"
-
-msgid "Search results"
-msgstr "Результаты поиска"
-
-msgid "Item type"
-msgstr "Вид предмета"
-
-msgid "Subject name"
-msgstr "Предметное имя"
-
-msgid "Author/Team of authors"
-msgstr "Автор/Коллектив авторов"
-
-msgid "Creation period"
-msgstr "Период создания"
-
-msgid "Creation place"
-msgstr "Место создания"
-
-msgid "Creation technology"
-msgstr "Материал, техника"
+msgid "About"
+msgstr "Обо мне"
 
 msgid "Size"
 msgstr "Размер"
 
-msgid "Identification number"
-msgstr "Номер по КП (НВ)"
-
-msgid "Too long name for `%s`: `%s`"
-msgstr "Слишком длинное имя для `%s`: `%s`"
-
 msgid "Processing was aborted by user"
 msgstr "Загрузка прервана пользователем"
 
-msgid "Search item"
-msgstr "Найти предмет"
-
 msgid "Find"
 msgstr "Найти"
-
-msgid "by item name..."
-msgstr "по названию предмета..."
-
-msgid "by item location..."
-msgstr "по месту хранения предмета..."
-
-msgid "by number..."
-msgstr "по номеру..."
 
 msgid "Show by"
 msgstr "Показывать по"
 
 msgid "records"
 msgstr "записей"
-
-msgid "Authors"
-msgstr "Автор/Коллектив авторов"
-
-msgid "Acceptance Act"
-msgstr "Акт приема-передачи"
-
-msgid "Protocol"
-msgstr "Протокол ФЗК"
 
 msgid "Menu"
 msgstr "Меню"
@@ -549,3 +477,10 @@ msgstr "Главная"
 
 msgid "Item name"
 msgstr "Предметное имя"
+
+msgid "Services"
+msgstr "Услуги"
+
+msgid "Gallery"
+msgstr "Галерея"
+

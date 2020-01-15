@@ -12,7 +12,7 @@
     $columns[$objectType.'.title']['label'] = __('Title');
     $columns[$objectType.'.modified']['label'] = __('Date');
     $columns[$objectType.'.featured']['label'] = __('For home page');
-    $row_actions = '../AdminNews/_row_actions';
+    $row_actions = '../AdminArticles/_row_actions';
 ?>
 <div class="row">
     <div class="col-md-12">

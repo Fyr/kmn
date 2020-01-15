@@ -40,7 +40,8 @@ jQuery(document).ready(function($) {
             showSlide(delta >= 0 ? -1 : 1);
             e.preventDefault();
         }
-        
+
+            /*
         $('nav a, .main-btn a').click(function(e) {
             // When link clicked, find slide it points to
             var newslide = parseInt($(this).attr('href')[1]);
@@ -49,6 +50,7 @@ jQuery(document).ready(function($) {
             showSlide(diff); // show that slide
             e.preventDefault();
         });
+        */
       
         $(window).resize(function(){
           // Keep current slide to left of window on resize
@@ -63,15 +65,11 @@ jQuery(document).ready(function($) {
         var $slide = $('.slide');
       
         // give active class to first link
-        $($('nav a')[0]).addClass('active');
+        // $($('nav a')[0]).addClass('active');
         
         // add event listener for mousescroll
         $body.bind('false', mouseEvent);
     })        
-
-
-        $('#form-submit .date').datepicker({
-        });
 
 
         $(window).on("scroll", function() {
@@ -85,3 +83,38 @@ jQuery(document).ready(function($) {
 
 
 });
+
+$(document).ready(function() {
+    // navigation click actions
+    $('.scroll-link').on('click', function(event){
+        event.preventDefault();
+        var sectionID = $(this).attr("data-id");
+        scrollToID('#' + sectionID, 750);
+    });
+    // scroll to top action
+    $('.scroll-top').on('click', function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop:0}, 'slow');
+    });
+    // mobile nav toggle
+    $('#nav-toggle').on('click', function (event) {
+        event.preventDefault();
+        $('#main-nav').toggleClass("open");
+    });
+});
+// scroll function
+function scrollToID(id, speed){
+    var offSet = 0;
+    var targetOffset = $(id).offset().top - offSet;
+    var mainNav = $('#main-nav');
+    $('html,body').animate({scrollTop:targetOffset}, speed);
+    if (mainNav.hasClass("open")) {
+        mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+        mainNav.removeClass("open");
+    }
+}
+if (typeof console === "undefined") {
+    console = {
+        log: function() { }
+    };
+}

@@ -19,15 +19,17 @@
     echo $this->element('AdminUI/form_title', array('title' => $this->ObjectType->getTitle($id ? 'edit' : 'create', $objectType)));
     echo $this->PHForm->create($objectType);
 
-    if (!$this->request->data('News.modified')) {
-        $this->request->data('News.modified', date('Y-m-d H:i:s'));
+    if (!$this->request->data('Article.modified')) {
+        $this->request->data('Article.modified', date('Y-m-d H:i:s'));
     }
     $tabs = array(
         __('General') => $this->Html->div('form-body',
             $this->element('AdminUI/checkboxes', array('labels' => array('published' => __('Published'), 'featured' => __('For home page'))))
             .$this->element('Article.edit_title')
             .$this->element('Article.edit_slug')
-            .$this->PHForm->date('modified', array('label' => array('text' => __('Date'), 'class' => 'col-md-3 control-label')))
+            // .$this->PHForm->input('title', array('label' => array('class' => 'col-md-3 control-label', 'text' => __('Title'))))
+            // .$this->PHForm->input('slug')
+            //.$this->PHForm->date('modified', array('label' => array('text' => __('Date'), 'class' => 'col-md-3 control-label')))
             .$this->PHForm->input('teaser',
                 array('label' => array('class' => 'col-md-3 control-label', 'text' => __('Teaser')))
             )

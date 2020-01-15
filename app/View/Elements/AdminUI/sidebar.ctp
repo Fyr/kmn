@@ -51,8 +51,10 @@
 	$aMenu = array(
 		array('label' => __('Static content'), 'icon' => 'icon-layers', 'url' => '', 'submenu' => array(
 			array('label' => __('Pages'), 'url' => array('controller' => 'AdminPages', 'action' => 'index')),
+			array('label' => __('Articles'), 'url' => array('controller' => 'AdminArticles', 'action' => 'index')),
 			array('label' => __('Events'), 'url' => array('controller' => 'AdminNews', 'action' => 'index')),
 		)),
+		/*
 		array('label' => __('Collections'), 'icon' => 'icon-docs', 'url' => '', 'submenu' => array(
 			array('label' => __('Categories'), 'url' => array('controller' => 'AdminCategories', 'action' => 'index')),
 			array('label' => __('Museum items'), 'url' => array('controller' => 'AdminProducts', 'action' => 'index')),
@@ -60,7 +62,6 @@
 		array('label' => __('Background tasks'), 'icon' => 'icon-paper-plane', 'url' => '', 'submenu' => array(
 			array('label' => __('Product Parser'), 'url' => array('controller' => 'AdminParser', 'action' => 'index')),
 		)),
-		/*
 		array('label' => __('Users'), 'icon' => 'icon-user', 'url' => '', 'submenu' => array(
 			array('label' => __('User profiles'), 'url' => array('controller' => 'AdminUsers', 'action' => 'index')),
 			array('label' => __('Admin profile'), 'url' => array('controller' => 'AdminUsers', 'action' => 'edit', 1)),
