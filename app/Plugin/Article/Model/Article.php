@@ -3,7 +3,7 @@ App::uses('AppModel', 'Model');
 class Article extends AppModel {
 	public $useTable = 'articles';
 
-	protected $objectType = '';
+	protected $objectType = 'Article';
 
 	/**
 	 * Auto-add object type in find conditions

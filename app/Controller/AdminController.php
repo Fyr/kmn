@@ -22,8 +22,6 @@ class AdminController extends AppController {
 	
 	public function beforeRenderLayout() {
 		$this->set('isAdmin', $this->isAdmin());
-		$this->set('aLangs', Configure::read('Config.langs'));
-		$this->set('lang', Configure::read('Config.language'));
 	}
 	
 	public function isAdmin() {
