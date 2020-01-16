@@ -18,29 +18,9 @@ class Article extends AppModel {
 		return $query;
 	}
 
-	private function _getObjectConditions($objectType = '', $objectID = '') {
-		$conditions = array();
-		if ($objectType) {
-			$conditions[$this->alias.'.object_type'] = $objectType;
-		}
-		if ($objectID) {
-			$conditions[$this->alias.'.object_id'] = $objectID;
-		}
-		return compact('conditions');
-	}
-
-	public function getObjectOptions($objectType = '', $objectID = '', $order = 'sorting') {
-		$conditions = array_values($this->_getObjectConditions($objectType, $objectID));
-		return $this->find('list', compact('conditions', 'order'));
-	}
-
-	public function getObject($objectType = '', $objectID = '') {
-		return $this->find('first', $this->_getObjectConditions($objectType, $objectID));
-	}
-
-	public function getObjectList($objectType = '', $objectID = '', $order = 'sorting') {
-		$conditions = array_values($this->_getObjectConditions($objectType, $objectID));
-		return $this->find('all', compact('conditions', 'order'));
+	public function viewed($id) {
+		$sql = "UPDATE {$this->useTable} SET views = views + 1 WHERE id = {$id}";
+		$this->query($sql);
 	}
 
 }

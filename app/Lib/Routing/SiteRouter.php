@@ -6,55 +6,31 @@ class SiteRouter extends Router {
 		list($objectType) = array_keys($article);
 		return $objectType;
 	}
-	
+
 	static public function url($article) {
 		$objectType = self::getObjectType($article);
-		if ($objectType == 'Product') {
-			$url = array(
-				'controller' => 'products',
-				'action' => 'view',
-				$article['Product']['id']
-				// $article['Product']['slug']
-			);
-		} elseif ($objectType == 'News') {
-			$url = array(
-				'controller' => 'news',
-				'action' => 'view',
-				$article['News']['id']
-			);
-		} elseif ($objectType == 'Category') {
-			$url = array(
-				'controller' => 'products',
-				'action' => 'index',
-				'?' => array('cat_id' => $article['Category']['id'])
-			);
-		} elseif ($objectType == 'Subcategory') {
-			$url = array(
-				'controller' => 'products',
-				'action' => 'index',
-				'?' => array('cat_id' => $article['Subcategory']['parent_id'], 'subcat_id' => $article['Subcategory']['id'])
-			);
-		} elseif ($objectType == 'Page') {
-			$action = 'view';
-			if (in_array($article['Page']['slug'], array('museum', 'customers', 'exposition'))) {
-				$action = 'about';
-			} elseif (in_array($article['Page']['slug'], array('history-pdf', 'history'))) {
-				$action = 'history';
-			}
+		if ($objectType == 'Page') {
 			$url = array(
 				'controller' => 'pages',
-				'action' => $action,
+				'action' => 'view',
 				$article['Page']['slug']
+			);
+		} elseif ($objectType == 'GalleryArticle') {
+			$url = array(
+				'controller' => 'Gallery',
+				'action' => 'view',
+				'objectType' => $objectType,
+				'slug' => $article[$objectType]['slug']
 			);
 		} else {
 			$url = array(
-				'controller' => 'articles',
+				'controller' => 'Articles',
 				'action' => 'view',
 				'objectType' => $objectType,
-				'slug' => $article[$objectType]['id']
+				'slug' => $article[$objectType]['slug']
 			);
 		}
 		return parent::url($url);
 	}
-	
+
 }

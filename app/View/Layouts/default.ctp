@@ -65,13 +65,11 @@
 	</div-->
 	<ul style="margin-top: 100px">
 <?
-	$class = "active";
 	foreach($aNavBar as $curr => $item) {
-
+		$class = ($curr === $currMenu) ? "active" : '';
 ?>
 		<li><a class="<?=$class?>" href="<?=$this->Html->url($item['url'])?>"><i class="fa <?=$item['icon']?>"></i> <em><?=$item['title']?></em></a></li>
 <?
-		$class = "";
 	}
 ?>
 		<!--li><a href="#1" class="active"><i class="fa fa-home"></i> <em>Главная</em></a></li>

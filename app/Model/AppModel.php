@@ -39,6 +39,30 @@ class AppModel extends Model {
         $this->setSource($table);
     }
 
+    private function _getObjectConditions($objectType = '', $objectID = '') {
+        $conditions = array();
+        if ($objectType) {
+            $conditions[$this->alias.'.object_type'] = $objectType;
+        }
+        if ($objectID) {
+            $conditions[$this->alias.'.object_id'] = $objectID;
+        }
+        return compact('conditions');
+    }
+
+    public function getObjectOptions($objectType = '', $objectID = '') {
+        return $this->find('list', $this->_getObjectConditions($objectType, $objectID));
+    }
+
+    public function getObject($objectType = '', $objectID = '') {
+        return $this->find('first', $this->_getObjectConditions($objectType, $objectID));
+    }
+
+    public function getObjectList($objectType = '', $objectID = '', $order = array()) {
+        $conditions = array_values($this->_getObjectConditions($objectType, $objectID));
+        return $this->find('all', compact('conditions', 'order'));
+    }
+
     public function trxBegin() {
         $this->getDataSource()->begin();
     }

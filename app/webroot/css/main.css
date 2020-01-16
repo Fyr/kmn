@@ -174,12 +174,26 @@ body {
   letter-spacing: 2px;
 }
 
-h2 {
+h1, h2 {
   font-family: 'PresentScript Cyrillic', arial;
-  font-size: 48px;
-  border-bottom: 1px solid #ddd;
+  font-size: 4em;
+  /* border-bottom: 1px solid #ddd; */
   display: inline-block;
   /* text-shadow: 4px 4px 4px #aaa; */
+}
+
+a, a:visited {
+  color: #fff;
+  text-decoration: underline;
+}
+a:hover {
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+h2 {
+  font-size: 3em;
 }
 
 nav {
@@ -377,7 +391,7 @@ nav a:hover::before {
 	margin-right: 15px;
 }
 
-.main-btn a {
+.main-btn a, .main-btn a:visited, .pagination span.current, .pagination span a {
 	display: inline-block;
 	border: 2px solid #fff;
 	padding: 8px 15px;
@@ -387,13 +401,18 @@ nav a:hover::before {
 	color: #fff;
 	text-decoration: none;
 	transition: all 0.5s;
-	transition: all 0.5s;
 }
 
-.main-btn a:hover {
+.main-btn a:hover, .pagination span a:hover {
   background-color: #fff;
   color: #232323!important;
 }
+
+.pagination span.current {
+  background-color: #fff !important;
+  color: #232323 !important;
+}
+
 
 .first-content .fb-btn {
 	display: inline-block;

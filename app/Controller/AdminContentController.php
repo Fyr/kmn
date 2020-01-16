@@ -53,6 +53,12 @@ class AdminContentController extends AdminController {
 					$this->request->data($model . '.parent_id', $parent_id);
 				}
 			}
+			if ($modified = $this->request->data($model.'.modified')) {
+				if (date('H:i:s', strtotime($modified)) === '00:00:00') {
+					$modified = date('Y-m-d', strtotime($modified)).' '.date('H:i:s');
+				}
+				$this->request->data($model.'.modified', $modified);
+			}
 			$this->beforeSave($id);
 			if ($this->{$model}->saveAll($this->request->data)) {
 				$this->Flash->success(__('Record has been successfully saved'));

@@ -22,7 +22,7 @@ class AppController extends Controller {
 	}
 
 	protected function _beforeInit() {
-		$this->helpers = array_merge(array('ArticleVars', 'Media'), $this->helpers); // 'ArticleVars', 'Media.PHMedia', 'Core.PHTime', 'Media', 'ObjectType'
+		$this->helpers = array_merge(array('ArticleVars', 'Media', 'Paginator'), $this->helpers); // 'ArticleVars', 'Media.PHMedia', 'Core.PHTime', 'Media', 'ObjectType'
 	}
 
 	protected function _afterInit() {
@@ -80,20 +80,24 @@ class AppController extends Controller {
 			'Home' => array('title' => __('Home'), 'icon' => 'fa-home', 'url' => array('controller' => 'pages', 'action' => 'home')),
 			'Services' => array('title' => __('Services'), 'icon' => 'fa-briefcase', 'url' => array('controller' => 'pages', 'action' => 'view', 'services')),
 			'About' => array('title' => __('About'), 'icon' => 'fa-user', 'url' => array('controller' => 'pages', 'action' => 'view', 'about')),
-			'News' => array('title' => __('Events'), 'icon' => 'fa-calendar-check-o', 'url' => array('controller' => 'news', 'action' => 'index')),
-			'Articles' => array('title' => __('Articles'), 'icon' => 'fa-pencil', 'url' => array('controller' => 'pages', 'action' => 'home')),
-			'Gallery' => array('title' => __('Gallery'), 'icon' => 'fa-image', 'url' => array('controller' => 'pages', 'action' => 'home')),
+			'News' => array('title' => __('Events'), 'icon' => 'fa-calendar-check-o', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'News')),
+			'Article' => array('title' => __('Articles'), 'icon' => 'fa-pencil', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'Article')),
+			'Gallery' => array('title' => __('Gallery'), 'icon' => 'fa-image', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'Gallery')),
 			'Contacts' => array('title' => __('Contacts'), 'icon' => 'fa-envelope', 'url' => array('controller' => 'pages', 'action' => 'view', 'contacts')),
 		);
 		$this->currMenu = $this->_getCurrMenu();
 		// $this->aBottomLinks = $this->aNavBar;
 		// $this->currLink = $this->_currMenu;
-		$this->Auth->allow(array('home', 'view', 'index', 'login', 'categories', 'about', 'history'));
+		$this->Auth->allow(array('home', 'view', 'index', 'login'));
 		$this->currUser = array();
-		$this->cart = array();
 		if ($this->Auth->loggedIn()) {
 			$this->_refreshUser();
 		}
+	}
+
+	protected function getObjectType() {
+		$objectType = $this->request->param('objectType');
+		return ($objectType) ? $objectType : 'Article';
 	}
 
 	public function beforeRender() {

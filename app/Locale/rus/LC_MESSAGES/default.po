@@ -484,3 +484,5 @@ msgstr "Услуги"
 msgid "Gallery"
 msgstr "Галерея"
 
+msgid "more"
+msgstr "подробнее"
