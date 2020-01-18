@@ -15,13 +15,6 @@ class SiteRouter extends Router {
 				'action' => 'view',
 				$article['Page']['slug']
 			);
-		} elseif ($objectType == 'GalleryArticle') {
-			$url = array(
-				'controller' => 'Gallery',
-				'action' => 'view',
-				'objectType' => $objectType,
-				'slug' => $article[$objectType]['slug']
-			);
 		} else {
 			$url = array(
 				'controller' => 'Articles',

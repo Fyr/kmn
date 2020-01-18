@@ -9,33 +9,27 @@ class ObjectTypeHelper extends AppHelper {
                 'Article' => __('Articles'),
                 'Page' => __('Static pages'),
                 'News' => __('Events'),
-                'Category' => __('Categories'),
-                'Subcategory' => __('Subcategories'),
-                'Product' => __('Museum items'),
+                'Photoalbum' => __('Photoalbums'),
                 'User' => __('User profiles'),
             ),
             'create' => array(
                 'Article' => __('Create article'),
                 'Page' => __('Create static page'),
                 'News' => __('Create news article'),
-                'Category' => __('Create category'),
-                'Subcategory' => __('Create subcategory'),
-                'Product' => __('Create museum item'),
+                'Photoalbum' => __('Create photoalbum'),
                 'User' => __('Create user'),
             ),
             'edit' => array(
                 'Article' => __('Edit article'),
                 'Page' => __('Edit static page'),
                 'News' => __('Edit news article'),
-                'Category' => __('Edit category'),
-                'Subcategory' => __('Edit subcategory'),
-                'Product' => __('Edit museum item'),
+                'Photoalbum' => __('Edit photoalbum'),
                 'User' => __('Edit user'),
             ),
             'view' => array(
             	'Article' => __('View article'),
             	'News' => __('View news article'),
-            	'Product' => __('View product'),
+            	'Photoalbum' => __('View photoalbum'),
             )
         );
         return $aTitles;

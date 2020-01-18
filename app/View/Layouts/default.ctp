@@ -15,6 +15,7 @@
 		'bootstrap-theme.min',
 		'fontAwesome',
 		'light-box',
+		'jquery.fancybox',
 		'main'
 	));
 
@@ -26,7 +27,8 @@
 		'vendor/modernizr-2.8.3-respond-1.4.2.min',
 		'vendor/jquery.1.11.0.min',
 		'vendor/bootstrap.min',
-		'vendor/plugins',
+		// 'vendor/plugins',
+		'vendor/jquery.fancybox.pack',
 		'main',
 	));
 	echo $this->fetch('script');
@@ -72,14 +74,6 @@
 <?
 	}
 ?>
-		<!--li><a href="#1" class="active"><i class="fa fa-home"></i> <em>Главная</em></a></li>
-		<li><a href="#7"><i class="fa fa-calendar-check-o"></i> <em>Новости</em></a></li>
-		<li><a href="#3"><i class="fa fa-pencil"></i> <em>Статьи</em></a></li>
-		<li><a href="#6"><i class="fa fa-briefcase"></i> <em>Услуги</em></a></li>
-		<li><a href="#4"><i class="fa fa-image"></i> <em>Галерея</em></a></li>
-		<li><a href="#2"><i class="fa fa-user"></i> <em>Обо мне</em></a></li>
-		<li><a href="#5"><i class="fa fa-envelope"></i> <em>Контакты</em></a></li-->
-
 	</ul>
 </nav>
 

@@ -1,6 +1,6 @@
 <?
 
-	echo $this->Html->link('<i class="fa fa-search"></i> '.__('Preview'), array('controller' => 'Articles', 'action' => 'view', $row['Article']['id']), array(
+	echo $this->Html->link('<i class="fa fa-search"></i> '.__('Preview'), array('controller' => 'articles', 'action' => 'view', $row['Article']['id']), array(
 		'class' => 'btn btn-outline dark btn-sm blue',
 		'escape' => false,
 		'target' => '_blank'

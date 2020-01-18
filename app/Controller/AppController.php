@@ -82,7 +82,7 @@ class AppController extends Controller {
 			'About' => array('title' => __('About'), 'icon' => 'fa-user', 'url' => array('controller' => 'pages', 'action' => 'view', 'about')),
 			'News' => array('title' => __('Events'), 'icon' => 'fa-calendar-check-o', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'News')),
 			'Article' => array('title' => __('Articles'), 'icon' => 'fa-pencil', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'Article')),
-			'Gallery' => array('title' => __('Gallery'), 'icon' => 'fa-image', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'Gallery')),
+			'Photoalbum' => array('title' => __('Gallery'), 'icon' => 'fa-image', 'url' => array('controller' => 'Articles', 'action' => 'index', 'objectType' => 'Photoalbum')),
 			'Contacts' => array('title' => __('Contacts'), 'icon' => 'fa-envelope', 'url' => array('controller' => 'pages', 'action' => 'view', 'contacts')),
 		);
 		$this->currMenu = $this->_getCurrMenu();

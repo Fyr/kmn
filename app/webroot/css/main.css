@@ -223,6 +223,7 @@ nav ul li i {
 nav ul li a {
 	font-size: 18px;
     letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 nav .mini-logo {
@@ -271,7 +272,7 @@ nav a {
   	position: relative;
   	z-index: 0;
     display: block;
-    max-width: 170px;
+    max-width: 180px;
 }
 nav a.active {
   background-color: #fff;

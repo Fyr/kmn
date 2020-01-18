@@ -1,4 +1,9 @@
-<div class="col-md-12">
+<?
+    $title = $this->ObjectType->getTitle('index', $objectType);
+    echo $this->element('title', compact('title'));
+?>
+
+<div class="col-md-12 <?=($objectType == 'Photoalbum') ? 'fourth-content' : ''?>">
     <div class="row">
         <?=$this->element('paginate')?>
     </div>
@@ -6,11 +11,16 @@
 <?
     $odd = true;
     foreach($aArticles as $article) {
-        $odd = !$odd;
-        if ($odd) {
-            echo $this->element('../Articles/_left_article', compact('article'));
+        $objectType = $this->ArticleVars->getObjectType($article);
+        if ($objectType === 'Photoalbum') {
+            echo $this->element('../Articles/_gallery', compact('article'));
         } else {
-            echo $this->element('../Articles/_right_article', compact('article'));
+            $odd = !$odd;
+            if ($odd) {
+                echo $this->element('../Articles/_left_article', compact('article'));
+            } else {
+                echo $this->element('../Articles/_right_article', compact('article'));
+            }
         }
     }
 ?>

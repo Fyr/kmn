@@ -3,9 +3,10 @@ App::uses('AppController', 'Controller');
 App::uses('SiteRouter', 'Lib/Routing');
 App::uses('Article', 'Article.Model');
 App::uses('News', 'Model');
+App::uses('Photoalbum', 'Model');
 App::uses('Media', 'Media.Model');
 class ArticlesController extends AppController {
-	public $uses = array('Article.Article', 'News', 'Media.Media');
+	public $uses = array('Article.Article', 'News', 'Photoalbum', 'Media.Media');
 	public $helpers = array('Core.PHTime');
 
 	const PER_PAGE = 8;
@@ -14,6 +15,11 @@ class ArticlesController extends AppController {
 		parent::beforeFilterLayout();
 		$this->objectType = $this->getObjectType();
 		$this->currMenu = $this->objectType;
+	}
+
+	public function beforeRenderLayout() {
+		parent::beforeRenderLayout();
+		$this->set('objectType', $this->objectType);
 	}
 
 	public function index() {
@@ -28,14 +34,13 @@ class ArticlesController extends AppController {
 	}
 
 	public function view($slug) {
-		$this->objectType = $this->getObjectType();
 		if (is_numeric($slug)) {
-			$article = $this->{$this->objectType}->findById($slug);
+			$article = $this->Article->findById($slug);
 			if (!$article) {
 				$this->redirect404();
 				return false;
 			}
-			$this->redirect(array('controller' => 'articles', 'action' => 'view', $article[$this->objectType][$slug]));
+			$this->redirect(SiteRouter::url(array($article['Article']['object_type'] => $article['Article'])));
 			return false;
 		}
 		$article = $this->{$this->objectType}->findBySlug($slug);

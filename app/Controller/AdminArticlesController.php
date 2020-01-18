@@ -8,7 +8,7 @@ class AdminArticlesController extends AdminContentController {
     public $uses = array('Article.Article');
 
     public $paginate = array(
-        'conditions' => array(),
+        'conditions' => array('Article.object_type' => 'Article'),
         'fields' => array('modified', 'title', 'slug', 'published', 'featured'),
         'limit' => 10
     );

@@ -54,11 +54,12 @@
 			array('label' => __('Articles'), 'url' => array('controller' => 'AdminArticles', 'action' => 'index')),
 			array('label' => __('Events'), 'url' => array('controller' => 'AdminNews', 'action' => 'index')),
 		)),
-		/*
-		array('label' => __('Collections'), 'icon' => 'icon-docs', 'url' => '', 'submenu' => array(
-			array('label' => __('Categories'), 'url' => array('controller' => 'AdminCategories', 'action' => 'index')),
-			array('label' => __('Museum items'), 'url' => array('controller' => 'AdminProducts', 'action' => 'index')),
+
+		array('label' => __('Gallery'), 'icon' => 'icon-picture', 'url' => '', 'submenu' => array(
+			array('label' => __('Photoalbums'), 'url' => array('controller' => 'AdminGallery', 'action' => 'index')),
+			// array('label' => __('Museum items'), 'url' => array('controller' => 'AdminProducts', 'action' => 'index')),
 		)),
+			/*
 		array('label' => __('Background tasks'), 'icon' => 'icon-paper-plane', 'url' => '', 'submenu' => array(
 			array('label' => __('Product Parser'), 'url' => array('controller' => 'AdminParser', 'action' => 'index')),
 		)),

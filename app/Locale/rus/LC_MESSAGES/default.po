@@ -486,3 +486,12 @@ msgstr "Галерея"
 
 msgid "more"
 msgstr "подробнее"
+
+msgid "Photoalbums"
+msgstr "Фотоальбомы"
+
+msgid "Create photoalbum"
+msgstr "Создать фотоальбом"
+
+msgid "Edit photoalbum"
+msgstr "Редактировать фотоальбом"
